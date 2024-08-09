@@ -1,0 +1,25 @@
+int flippingMatrix(vector<vector<int>> matrix) {
+int R=matrix.size();
+int l=0;int r=R-1;
+int sum=0;
+while(l<r){//col
+    int t=0;//row
+    int b=R-1;
+    while(t<b){
+        sum+=max(max(matrix[t][l],matrix[t][r]),max(matrix[b][l],matrix[b][r]));
+        t++;
+        b--;
+    }
+    l++;r--;
+}
+return sum;
+}
+int main(){
+cin>>n //row size;
+vector<vector<int>>matrix(n,vector<int>(n));
+for(int i=0;i<n;i++){
+  for(int j=0;j<n;j++){
+     cin>>matrix[i][j];
+  }
+}
+}
